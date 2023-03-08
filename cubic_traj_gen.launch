@@ -1,0 +1,19 @@
+<launch>
+    <!-- Starting point generator node -->
+    <node name="points_generator" pkg="ar_week5_test" type="points_generator.py" output="screen"/>
+    
+    <!-- Starting cubic traj planner node -->
+    <node name="cubic_traj_planner" pkg="ar_week5_test" type="cubic_traj_planner.py" output="screen"/>
+    
+    <!-- Starting compute cubic coeffs node -->
+    <node name="compute_cubic_coeffs" pkg="ar_week5_test" type="compute_cubic_coeffs.py" output="screen"/>
+    
+    <!-- Starting plot cubic traj node -->
+    <node name="plot_cubic_traj" pkg="ar_week5_test" type="plot_cubic_traj.py" output="screen"/>
+    
+    <!-- Starting the rqt_plot GUI to visualize trajectories-->
+     <node pkg="rqt_plot" type="rqt_plot" name="rqt_plot" args="/position_trajectory /velocity_trajectory /acceleration_trajectory"/>
+     
+     <node name="rqt_graph" pkg="rqt_graph" type="rqt_graph" output="screen"/>
+    
+</launch>
